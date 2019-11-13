@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="top">
+    <view class="title">
+      <view class="name">点击成为超人</view>
+      <image src="../../statics/avatar.png" />
+    </view>
+    <view class="info">
+      <view class="item">
+        <image src="../../statics/task.png" />
+        <view class="name">打卡任务</view>
+        <view class="count">0</view>
+      </view>
+      <view class="item">
+        <image src="../../statics/total.png" />
+        <view class="name">累计打卡</view>
+        <view class="count">0</view>
+      </view>
+      <view class="item">
+        <image src="../../statics/record.png" />
+        <view class="name">最高连续</view>
+        <view class="count">0</view>
+      </view>
+    </view>
+  </view>
+  <view class="operation">
+    <image src="../../statics/share.png" />
+    <text>分享给好友</text>
+    <image src="../../statics/arrow.png" />
+  </view>
+  <view class="operation">
+    <image src="../../statics/service.png" />
+    <text>联系客服</text>
+    <image src="../../statics/arrow.png" />
+  </view>
+</view>
