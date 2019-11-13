@@ -1,0 +1,28 @@
+/* 引入 weui */
+@import './style/weui';
+/* 引入 wxParse */
+@import './lib/wxParse/wxParse';
+
+/* 基础样式库 */
+page {
+  min-height: 100%;
+  background-color: #fafafa;
+}
+
+button {
+  border-radius: 0;
+}
+
+button.clear {
+  margin: 0;
+  padding: 0;
+}
+
+button::after {
+  border: none;
+}
+
+view,
+scroll-view {
+  box-sizing: border-box;
+}

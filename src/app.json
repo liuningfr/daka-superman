@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF",
+    "backgroundTextStyle": "light"
+  },
+  "networkTimeout": {
+    "request": 15000
+  }
+}

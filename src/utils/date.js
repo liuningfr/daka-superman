@@ -1,0 +1,112 @@
+/**
+ * 一个日期相关的工具函数
+ * @author pengtikui
+ */
+
+/** 不足两位的数字前面补0 */
+const padStart = (string) => {
+  const s = string.toString();
+  if (s.length > 1) return s;
+  return `0${s}`;
+};
+
+/** 12小时制的小时 */
+const shortHour = (hour) => {
+  if (hour === 0) return 12;
+  if (hour <= 12) return hour;
+  return hour - 12;
+};
+
+/** 汉字的星期 */
+const weeksCN = ['日', '一', '二', '三', '四', '五', '六'];
+/** 英文的星期 */
+const weeksEN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+const formatDateStr = (dateStr) => {
+  if (isNaN(dateStr)) return dateStr.replace(/-/g, '/');
+  return dateStr * 1000;
+};
+
+/**
+ * 日期格式化
+ * @param {string} formatStr 格式化字符串
+ * @param {number} [timestamp] 以秒为单位的时间戳或日期字符串（`YYYY-MM-DD HH:mm:ss`）
+ * @returns {string} 格式化后的时间字符串，如 `YYYY-MM-DD HH:mm:ss`
+ * 支持的格式如下：
+ * YY   =>  两位的年
+ * YYYY =>  四位的年
+ * M    =>  一位或两位的月
+ * MM   =>  两位的月
+ * D    =>  一位或两位的日
+ * DD   =>  两位的日
+ * d    =>  阿拉伯数字的星期，0表示周日
+ * dd   =>  汉字的星期，参考上面的`weeksCN`
+ * ddd  =>  英文的星期，参考上面的`weeksEN`
+ * H    =>  一位或两位的小时，24小时制
+ * HH   =>  两位的小时，24小时制
+ * h    =>  一位或两位的小时，12小时制
+ * hh   =>  两位的小时，12小时制
+ * m    =>  一位或两位的分钟
+ * mm   =>  两位的分钟
+ * s    =>  一位或两位的秒
+ * ss   =>  两位的秒
+ */
+const format = (formatStr, dateStr) => {
+  /** reg、date 与 wxs 中的不一样 */
+  const reg = /\[.*?\]|Y{2,4}|M{1,4}|D{1,2}|d{1,3}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|SSS/g;
+  let date;
+  if (!dateStr) {
+    date = new Date();
+  } else {
+    date = new Date(formatDateStr(dateStr));
+  }
+  const _year = date.getFullYear();
+  const _month = date.getMonth();
+  const _date = date.getDate();
+  const _day = date.getDay();
+  const _hour = date.getHours();
+  const _minute = date.getMinutes();
+  const _second = date.getSeconds();
+  return formatStr.replace(reg, (match) => {
+    switch (match) {
+      case 'YY':
+        return _year.toString().slice(-2);
+      case 'YYYY':
+        return _year;
+      case 'M':
+        return _month + 1;
+      case 'MM':
+        return padStart(_month + 1);
+      case 'D':
+        return _date;
+      case 'DD':
+        return padStart(_date);
+      case 'd':
+        return _day;
+      case 'dd':
+        return weeksCN[_day];
+      case 'ddd':
+        return weeksEN[_day];
+      case 'H':
+        return _hour;
+      case 'HH':
+        return padStart(_hour);
+      case 'h':
+        return shortHour(_hour);
+      case 'hh':
+        return padStart(shortHour(_hour));
+      case 'm':
+        return _minute;
+      case 'mm':
+        return padStart(_minute);
+      case 's':
+        return _second;
+      case 'ss':
+        return padStart(_second);
+      default:
+        return '';
+    }
+  });
+};
+
+export { format }; // eslint-disable-line
