@@ -22,14 +22,14 @@
       </view>
     </view>
   </view>
-  <view class="operation">
+  <button class="operation" open-type="share">
     <image src="../../statics/share.png" />
     <text>分享给好友</text>
     <image src="../../statics/arrow.png" />
-  </view>
-  <view class="operation">
+  </button>
+  <button class="operation" open-type="contact">
     <image src="../../statics/service.png" />
     <text>联系客服</text>
     <image src="../../statics/arrow.png" />
-  </view>
+  </button>
 </view>
