@@ -17,13 +17,13 @@
       {
         "text": "打卡星球",
         "pagePath": "pages/index/index",
-        "iconPath": "statics/tabbar_index.png",
+        "iconPath": "statics/tabbar_index_off.png",
         "selectedIconPath": "statics/tabbar_index.png"
       },
       {
         "text": "我是超人",
         "pagePath": "pages/myCenter/myCenter",
-        "iconPath": "statics/tabbar_my.png",
+        "iconPath": "statics/tabbar_my_off.png",
         "selectedIconPath": "statics/tabbar_my.png"
       }
     ]

@@ -1,1 +1,17 @@
-<view>hello</view>
+<view class="container">
+  <view class="title">你好，打卡超人</view>
+  <view class="item">
+    <image class="avatar" src="../../statics/zaoshui.png"/>
+    <view class="info">
+      <text>早睡超人</text>
+      <text>已打卡8次</text>
+    </view>
+    <view class="btn">
+      <image src="../../statics/btn_go.png" />
+      <text>去打卡</text>
+    </view>
+  </view>
+  <view class="add">
+    <image src="../../statics/btn_add.png" />
+  </view>
+</view>
