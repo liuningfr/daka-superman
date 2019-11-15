@@ -6,10 +6,7 @@
       <text>早睡超人</text>
       <text>已打卡8次</text>
     </view>
-    <view class="btn">
-      <image src="../../statics/btn_go.png" />
-      <text>去打卡</text>
-    </view>
+    <view class="btn">去打卡</view>
   </view>
   <view class="add">
     <image src="../../statics/btn_add.png" />

@@ -69,19 +69,12 @@ page {
     .btn {
       display: flex;
       align-items: center;
-      width: 150rpx;
       height: 50rpx;
       border-radius: 25rpx;
       font-size: 24rpx;
-      line-height: 33rpx;
+      line-height: 50rpx;
       background-color: #FEDD00;
-      padding: 0 24rpx 0 22rpx;
-
-      image {
-        width: 24rpx;
-        height: 24rpx;
-        margin-right: 8rpx;
-      }
+      padding: 0 28rpx;
     }
   }
 }
