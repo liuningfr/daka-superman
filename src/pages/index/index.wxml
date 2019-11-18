@@ -1,6 +1,6 @@
 <view class="container">
   <view class="title">你好，打卡超人</view>
-  <view class="item">
+  <view class="item" bindtap="goDetail">
     <image class="avatar" src="../../statics/zaoshui.png"/>
     <view class="info">
       <text>早睡超人</text>

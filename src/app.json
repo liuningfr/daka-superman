@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/myCenter/myCenter"
+    "pages/myCenter/myCenter",
+    "pages/detail/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFF",
