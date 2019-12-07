@@ -1,5 +1,7 @@
 <view class="container">
   <view class="card">
+    <image class="circle" src="../../statics/circle.png" />
+    <image class="edit" bindtap="goEdit" src="../../statics/edit.png" />
     <view class="info">
       <image class="avatar" src="../../statics/zaoshui.png" />
       <view class="title">坚持每天早睡</view>

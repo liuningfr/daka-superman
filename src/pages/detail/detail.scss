@@ -28,6 +28,7 @@ page {
   }
 
   .card {
+    position: relative;
     width: 670rpx;
     border-radius: 8rpx;
     box-shadow: 0 3rpx 3rpx 0 rgba(0,0,0,0.04);
@@ -37,6 +38,22 @@ page {
     padding: 132rpx 32rpx 60rpx;
     margin-top: 40rpx;
     background-color: #FFFFFF;
+
+    .circle {
+      width: 96rpx;
+      height: 96rpx;
+      position: absolute;
+      left: 287rpx;
+      top: -30rpx;
+    }
+
+    .edit {
+      width: 48rpx;
+      height: 48rpx;
+      position: absolute;
+      right: 40rpx;
+      top: 40rpx;
+    }
 
     .info {
       display: flex;
