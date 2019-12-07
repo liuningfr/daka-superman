@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/myCenter/myCenter",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/edit/edit"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFF",
