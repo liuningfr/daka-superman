@@ -2,4 +2,95 @@ page {
   background-color: #FFFFFF;
 }
 
-.container {}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 40rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: #333333;
+
+  .avatar {
+    width: 180rpx;
+    height: 180rpx;
+    margin-bottom: 64rpx;
+  }
+
+  .upload {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .icon-container {
+      margin: 40rpx 0 88rpx;
+      display: flex;
+
+      .add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 96rpx;
+        height: 96rpx;
+        background-color: #F6F6F6;
+        border: 2rpx solid rgba(233,233,233,1);
+        border-radius: 50%;
+
+        .icon_add {
+          width: 40rpx;
+          height: 40rpx
+        }
+      }
+
+      .icon {
+        margin-left: 46rpx;
+        position: relative;
+
+        .bg {
+          box-sizing: border-box;
+          width: 96rpx;
+          height: 96rpx;
+          border-radius: 50%;
+        }
+
+        .ok {
+          width: 36rpx;
+          height: 36rpx;
+          position: absolute;
+          right: -6rpx;
+          bottom: 8rpx;
+        }
+      }
+
+      .selected {
+        border: 4rpx solid rgba(254,220,0,1);
+      }
+    }
+  }
+
+  .name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    image {
+      width: 40rpx;
+      height: 40rpx;
+    }
+    input {
+      height: 56rpx;
+      font-size: 40rpx;
+      font-weight: bold;
+      flex-grow: 1;
+    }
+  }
+
+  .border {
+    width: 100%;
+    height: 4rpx;
+    background: #333333;
+    border-radius: 3rpx;
+    margin-top: 24rpx;
+  }
+}

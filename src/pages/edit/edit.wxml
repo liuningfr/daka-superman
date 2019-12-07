@@ -1,3 +1,29 @@
 <view class="container">
-创建打卡
+  <image class="avatar" src="../../statics/avatar.png" />
+  <view class="upload">
+    <view>选择打卡图标</view>
+    <view class="icon-container">
+      <view class="add" bindtap="chooseImg">
+        <image class="icon_add" src="../../statics/icon_add.png" />
+      </view>
+      <view class="icon">
+        <image class="bg selected" src="../../statics/avatar.png" />
+        <image class="ok" src="../../statics/choose_ok.png" />
+      </view>
+      <view class="icon">
+        <image class="bg" src="../../statics/zaoshui.png" />
+      </view>
+      <view class="icon">
+        <image class="bg" src="../../statics/sports.png" />
+      </view>
+      <view class="icon">
+        <image class="bg" src="../../statics/english.png" />
+      </view>
+    </view>
+  </view>
+  <view class="name">
+    <input value="打卡超人" />
+    <image src="../../statics/write_delete.png" />
+  </view>
+  <view class="border" />
 </view>
