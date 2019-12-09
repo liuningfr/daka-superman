@@ -23,7 +23,22 @@
   </view>
   <view class="name">
     <input value="打卡超人" />
+    <view class="total">1/12</view>
     <image src="../../statics/write_delete.png" />
   </view>
   <view class="border" />
+  <view class="item">
+    <text>打卡提醒</text>
+    <image class="switch" src="../../statics/switch_on.png" />
+  </view>
+  <view class="item">
+    <text>提醒时间</text>
+    <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+      <view class="right">
+        <view class="time">选择时间</view>
+        <image class="arrow" src="../../statics/right_arrow.png" />
+      </view>
+    </picker>
+  </view>
+  <view class="finish">完成</view>
 </view>

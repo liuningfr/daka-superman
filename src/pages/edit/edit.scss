@@ -77,12 +77,18 @@ page {
     image {
       width: 40rpx;
       height: 40rpx;
+      margin-left: 24rpx;
     }
     input {
       height: 56rpx;
       font-size: 40rpx;
       font-weight: bold;
       flex-grow: 1;
+    }
+    .total {
+      font-size: 24rpx;
+      line-height: 33rpx;
+      color: #999999;
     }
   }
 
@@ -91,6 +97,48 @@ page {
     height: 4rpx;
     background: #333333;
     border-radius: 3rpx;
-    margin-top: 24rpx;
+    margin: 24rpx 0;
+  }
+
+  .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #E6E6E6;
+    font-size: 30rpx;
+    line-height: 120rpx;
+    text {
+      color: #333333;
+    }
+    .switch {
+      width: 80rpx;
+      height: 48rpx;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      .arrow {
+        width: 40rpx;
+        height: 40rpx;
+        margin-left: 8rpx;
+      }
+      .time {
+        color: #999999;
+        font-weight: bold;
+      }
+    }
+  }
+  .finish {
+    margin-top: 80rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #333333;
+    font-size: 30rpx;
+    line-height: 90rpx;
+    font-weight: bold;
+    border-radius: 12rpx;
+    background-color: #FEDD00;
   }
 }
