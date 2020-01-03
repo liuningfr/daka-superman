@@ -27,9 +27,10 @@
     <image src="../../statics/write_delete.png" />
   </view>
   <view class="border" />
-  <view class="item">
+  <view class="item" bindtap="toggleRemind">
     <text>打卡提醒</text>
-    <image class="switch" src="../../statics/switch_on.png" />
+    <image wx:if="{{remind}}" class="switch" src="../../statics/switch_on.png" />
+    <image wx:else class="switch" src="../../statics/switch_off.png" />
   </view>
   <view class="item">
     <text>提醒时间</text>

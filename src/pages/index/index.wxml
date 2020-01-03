@@ -8,7 +8,7 @@
     </view>
     <view class="btn">去打卡</view>
   </view>
-  <view class="add" bindtap="goEdit">
+  <view class="add" bindtap="goEdit" style="{{iPhoneX ? 'bottom: 108rpx' : ''}}">
     <image src="../../statics/btn_add.png" />
   </view>
 </view>

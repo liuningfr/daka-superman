@@ -23,5 +23,5 @@
     </view>
   </view>
   <view class="btn">轻触打卡</view>
-  <image class="logo" src="../../statics/logo.png" />
+  <image class="logo" src="../../statics/logo.png" style="{{iPhoneX ? 'bottom: 96rpx' : ''}}" />
 </view>
