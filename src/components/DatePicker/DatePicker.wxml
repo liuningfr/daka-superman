@@ -1,0 +1,27 @@
+<view class="modal" wx:if="{{visiable}}" bindtap="cancel">
+  <view
+    class="container {{(visiable && visiablenew) ? 'scroll_show':'scroll_hidden' }}"
+    style="padding-bottom: {{bottom}}rpx"
+    catchtap="donothing"
+  >
+    <view class="toggle_bar">
+      <view class="cancel" bindtap="cancel">取消</view>
+      <view class="titletext">提醒时间</view>
+      <view class="confirm" bindtap="confirm">确认</view>
+    </view>
+    <picker-view
+      class="scroll_container"
+      indicator-class="indicator"
+      style="width: 100%;"
+      value="{{value}}"
+      bindchange="bindChange"
+    >
+      <picker-view-column>
+        <view wx:for="{{hours}}" class="{{indexlable1[index]}} unit" wx:key="{{index}}">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{minutes}}" class="{{indexlable2[index]}} unit" wx:key="{{index}}">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

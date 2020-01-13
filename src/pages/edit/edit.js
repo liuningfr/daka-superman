@@ -1,6 +1,14 @@
 Page({
   data: {
     remind: false,
+    showTimePicker: false,
+  },
+  onLoad() {
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({ iPhoneX: res.model.indexOf('iPhone X') > -1 });
+      },
+    });
   },
   chooseImg() {
     wx.chooseImage({
@@ -14,5 +22,8 @@ Page({
   toggleRemind() {
     const { remind } = this.data;
     this.setData({ remind: !remind });
+  },
+  chooseTime() {
+    this.setData({ showTimePicker: true });
   },
 });

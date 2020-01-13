@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "创建打卡",
   "navigationBarBackgroundColor": "#FFFFFF",
-  "backgroundColor": "#FFFFFF"
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "date-picker": "/components/DatePicker/DatePicker"
+  }
 }

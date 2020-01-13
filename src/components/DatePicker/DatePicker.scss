@@ -1,0 +1,86 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+.toggle_bar {
+  height: 110rpx;
+  position: relative;
+}
+.cancel {
+  position: absolute;
+  left: 40rpx;
+  top: 30rpx;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  color: #999999;
+}
+.confirm {
+  position: absolute;
+  right: 40rpx;
+  top: 30rpx;
+  color: #FFB600;
+  font-size: 32rpx;
+  line-height: 45rpx;
+}
+.titletext {
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  transform: translate(-50%);
+  color: #333333;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  font-weight: bold;
+}
+.scroll_container {
+  height: 400rpx;
+  margin-bottom: 20rpx;
+}
+.container {
+  border-radius: 24rpx 24rpx 0 0;
+  position: absolute;
+  height: 560rpx;
+  width: 100%;
+  background-color: white;
+}
+.scroll_show {
+  animation: scroll_show 0.2s;
+  animation-fill-mode: forwards;
+}
+.scroll_hidden {
+  animation: scroll_hidden 0.2s;
+  animation-fill-mode: forwards;
+}
+@keyframes scroll_hidden
+{
+  from {bottom: 0;}
+  to {bottom: -501rpx}
+}
+@keyframes scroll_show
+{
+  from {bottom: -501rpx;}
+  to {bottom: 0}
+}
+.indicator {
+  height: 80rpx;
+  background-color: rgba(247, 247, 247, 0.1);
+  opacity: 1;
+}
+.choiced {
+  color: peru;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  color: #333333;
+}
+.unit {
+  text-align: center;
+}
+.normal {
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
