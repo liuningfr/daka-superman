@@ -6,6 +6,7 @@ Page({
     time: [0, 0],
     uploadImg: '',
     selectedIcon: 'avatar',
+    name: '',
   },
   onLoad() {
     wx.getSystemInfo({
@@ -44,5 +45,11 @@ Page({
   },
   delImg() {
     this.setData({ selectedIcon: 'avatar', uploadImg: '' });
+  },
+  changeName(e) {
+    this.setData({ name: e.detail.value });
+  },
+  clearName() {
+    this.setData({ name: '' });
   },
 });

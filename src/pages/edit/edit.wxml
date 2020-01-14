@@ -30,9 +30,9 @@
     </view>
   </view>
   <view class="name">
-    <input value="打卡超人" />
-    <view class="total">1/12</view>
-    <image src="../../statics/write_delete.png" />
+    <input value="{{name}}" bindinput="changeName" placeholder="输入打卡名称(限12字)" placeholder-style="color:#CCCCCC;" />
+    <view wx:if="{{name}}" class="total {{name.length > 12 ? 'red' : ''}}">{{name.length}}/12</view>
+    <image src="../../statics/write_delete.png" bindtap="clearName" />
   </view>
   <view class="border" />
   <view class="item" bindtap="toggleRemind">
@@ -40,7 +40,7 @@
     <image wx:if="{{remind}}" class="switch" src="../../statics/switch_on.png" />
     <image wx:else class="switch" src="../../statics/switch_off.png" />
   </view>
-  <view class="item">
+  <view wx:if="{{remind}}" class="item">
     <text>提醒时间</text>
     <view class="right" bindtap="tapTime">
       <block wx:if="{{timeText}}">
