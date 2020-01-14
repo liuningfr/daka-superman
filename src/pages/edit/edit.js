@@ -2,7 +2,8 @@ Page({
   data: {
     remind: false,
     showTimePicker: false,
-    time: '',
+    timeText: '',
+    time: [0, 0],
   },
   onLoad() {
     wx.getSystemInfo({
@@ -30,9 +31,9 @@ Page({
   chooseTime(e) {
     const { value } = e.detail;
     if (value.length > 0) {
-      const hour = value[0];
-      const minute = value[1];
-      this.setData({ time: `${hour}:${minute}` });
+      const hour = value[0].toString().length === 1 ? `0${value[0]}` : value[0];
+      const minute = value[1].toString().length === 1 ? `0${value[1]}` : value[1];
+      this.setData({ timeText: `${hour}:${minute}` });
     }
   },
 });
