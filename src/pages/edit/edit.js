@@ -4,6 +4,8 @@ Page({
     showTimePicker: false,
     timeText: '',
     time: [0, 0],
+    uploadImg: '',
+    selectedIcon: 'avatar',
   },
   onLoad() {
     wx.getSystemInfo({
@@ -17,7 +19,7 @@ Page({
       count: 1,
       sourceType: ['album', 'camera'],
       success: (res) => {
-        console.log(res.tempFilePaths);
+        this.setData({ uploadImg: res.tempFilePaths, selectedIcon: '' });
       },
     });
   },
@@ -35,5 +37,12 @@ Page({
       const minute = value[1].toString().length === 1 ? `0${value[1]}` : value[1];
       this.setData({ timeText: `${hour}:${minute}` });
     }
+  },
+  chooseIcon(e) {
+    const { index } = e.currentTarget.dataset;
+    this.setData({ selectedIcon: index, uploadImg: '' });
+  },
+  delImg() {
+    this.setData({ selectedIcon: 'avatar', uploadImg: '' });
   },
 });

@@ -16,6 +16,7 @@ page {
     width: 180rpx;
     height: 180rpx;
     margin-bottom: 64rpx;
+    border-radius: 50%;
   }
 
   .upload {
@@ -31,6 +32,7 @@ page {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
         width: 96rpx;
         height: 96rpx;
         background-color: #F6F6F6;
@@ -46,21 +48,25 @@ page {
       .icon {
         margin-left: 46rpx;
         position: relative;
+      }
 
-        .bg {
-          box-sizing: border-box;
-          width: 96rpx;
-          height: 96rpx;
-          border-radius: 50%;
-        }
+      .upload-icon {
+        position: relative;
+      }
 
-        .ok {
-          width: 36rpx;
-          height: 36rpx;
-          position: absolute;
-          right: -6rpx;
-          bottom: 8rpx;
-        }
+      .bg {
+        box-sizing: border-box;
+        width: 96rpx;
+        height: 96rpx;
+        border-radius: 50%;
+      }
+
+      .ok {
+        width: 36rpx;
+        height: 36rpx;
+        position: absolute;
+        right: -6rpx;
+        bottom: 8rpx;
       }
 
       .selected {
