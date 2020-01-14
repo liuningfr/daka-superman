@@ -2,6 +2,7 @@ Page({
   data: {
     remind: false,
     showTimePicker: false,
+    time: '',
   },
   onLoad() {
     wx.getSystemInfo({
@@ -23,7 +24,15 @@ Page({
     const { remind } = this.data;
     this.setData({ remind: !remind });
   },
-  chooseTime() {
+  tapTime() {
     this.setData({ showTimePicker: true });
+  },
+  chooseTime(e) {
+    const { value } = e.detail;
+    if (value.length > 0) {
+      const hour = value[0];
+      const minute = value[1];
+      this.setData({ time: `${hour}:${minute}` });
+    }
   },
 });

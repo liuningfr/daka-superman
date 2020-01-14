@@ -2,15 +2,15 @@ const hours = [];
 for (let i = 0; i < 10; i += 1) {
   hours.push(`0${i}`);
 }
-for (let i = 10; i < 25; i += 1) {
-  hours.push(`0${i}`);
+for (let i = 10; i < 24; i += 1) {
+  hours.push(`${i}`);
 }
 const minutes = [];
 for (let i = 0; i < 10; i += 1) {
   minutes.push(`0${i}`);
 }
-for (let i = 10; i < 61; i += 1) {
-  minutes.push(`0${i}`);
+for (let i = 10; i < 60; i += 1) {
+  minutes.push(`${i}`);
 }
 
 Component({
@@ -28,10 +28,6 @@ Component({
       value: minutes,
     },
     value: {
-      type: Array,
-      value: [],
-    },
-    time_collect: {
       type: Array,
       value: [],
     },
@@ -63,22 +59,11 @@ Component({
     },
     confirm() {
       this.cancel();
-      const arg1 = this.data.time[this.data.value[1]];
-      const arg2 = this.data.datearray[this.data.value[0]];
-      this.triggerEvent('setfunc', { arg2, arg1, value: this.data.value }, {});
+      this.triggerEvent('setfunc', { value: this.data.value });
     },
     bindChange(e) {
       const val = e.detail.value;
-      const { time_collect, indexlable1, indexlable2 } = this.data;
-      if (val[0] < time_collect.length) {
-        this.setData({
-          time: time_collect[val[0]],
-        });
-      } else {
-        this.setData({
-          time: time_collect[time_collect.length - 1],
-        });
-      }
+      const { indexlable1, indexlable2 } = this.data;
 
       indexlable1.forEach((currentValue, index, array) => {
         array[index] = 'normal'; // eslint-disable-line
@@ -87,8 +72,9 @@ Component({
         array[index] = 'normal'; // eslint-disable-line
       });
 
-      this.data.indexlable1[val[0]] = 'choiced';
-      this.data.indexlable2[val[1]] = 'choiced';
+      indexlable1[val[0]] = 'choiced';
+      indexlable2[val[1]] = 'choiced';
+
       this.setData({
         indexlable1: this.data.indexlable1,
         indexlable2: this.data.indexlable2,

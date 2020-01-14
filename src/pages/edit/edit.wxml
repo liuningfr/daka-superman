@@ -34,7 +34,7 @@
   </view>
   <view class="item">
     <text>提醒时间</text>
-    <view class="right" bindtap="chooseTime">
+    <view class="right" bindtap="tapTime">
       <view class="time">选择时间</view>
       <image class="arrow" src="../../statics/right_arrow.png" />
     </view>
@@ -42,4 +42,4 @@
   <view class="finish">完成</view>
 </view>
 
-<date-picker visiable="{{showTimePicker}}" bottom="{{iPhoneX ? 68 : 0}}"/>
+<date-picker visiable="{{showTimePicker}}" bottom="{{iPhoneX ? 68 : 0}}" bind:setfunc="chooseTime" />
