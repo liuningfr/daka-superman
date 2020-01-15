@@ -13,15 +13,21 @@
         <text>32</text>
       </view>
       <view class="item">
-        <text>累计打卡</text>
-        <text>32</text>
+        <text>当前连续</text>
+        <text>6</text>
       </view>
       <view class="item">
-        <text>累计打卡</text>
-        <text>32</text>
+        <text>最高连续</text>
+        <text>12</text>
       </view>
     </view>
   </view>
-  <view class="btn">轻触打卡</view>
+  <view wx:if="{{isDone}}" class="btn done">
+    <image class="smile" src="../../statics/smile.png" />
+    <view>恭喜你，完成打卡</view>
+  </view>
+  <view wx:else class="btn" bindtap="touchDaka">
+    <view>轻触打卡</view>
+  </view>
   <image class="logo" src="../../statics/logo.png" style="{{iPhoneX ? 'bottom: 96rpx' : ''}}" />
 </view>

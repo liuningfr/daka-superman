@@ -52,7 +52,8 @@
       <image class="arrow" src="../../statics/right_arrow.png" />
     </view>
   </view>
-  <view class="finish">完成</view>
+  <view class="btn finish" bindtap="finishDaka">完成</view>
+  <view class="btn delete" bindtap="deleteDaka">删除</view>
 </view>
 
 <date-picker visiable="{{showTimePicker}}" bottom="{{iPhoneX ? 68 : 0}}" bind:setfunc="chooseTime" value="{{time}}" />

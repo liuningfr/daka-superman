@@ -8,7 +8,12 @@ Page({
     selectedIcon: 'avatar',
     name: '',
   },
-  onLoad() {
+  onLoad(options) {
+    if (options.edit) {
+      wx.setNavigationBarTitle({ title: '编辑打卡' });
+    } else {
+      wx.setNavigationBarTitle({ title: '创建打卡' });
+    }
     wx.getSystemInfo({
       success: (res) => {
         this.setData({ iPhoneX: res.model.indexOf('iPhone X') > -1 });
@@ -51,5 +56,28 @@ Page({
   },
   clearName() {
     this.setData({ name: '' });
+  },
+  finishDaka() {
+    wx.showToast({
+      title: '创建成功',
+      duration: 2000,
+      mask: true,
+    });
+  },
+  deleteDaka() {
+    wx.showModal({
+      title: '确认删除该打卡么?',
+      confirmColor: '#FA5151',
+      cancelColor: '#999999',
+      success(res) {
+        if (res.confirm) {
+          wx.showToast({
+            title: '删除成功',
+            duration: 2000,
+            mask: true,
+          });
+        }
+      },
+    });
   },
 });

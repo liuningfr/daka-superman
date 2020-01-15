@@ -142,8 +142,7 @@ page {
       }
     }
   }
-  .finish {
-    margin-top: 80rpx;
+  .btn {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -152,6 +151,13 @@ page {
     line-height: 90rpx;
     font-weight: bold;
     border-radius: 12rpx;
+  }
+  .finish {
+    margin-top: 80rpx;
     background-color: #FEDD00;
+  }
+  .delete {
+    margin-top: 24rpx;
+    background-color: #F6F6F6;
   }
 }

@@ -16,15 +16,27 @@ page {
   }
 
   .btn {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 670rpx;
     height: 90rpx;
     background: rgba(254,220,0,1);
     border-radius: 12rpx;
     font-size: 30rpx;
-    line-height: 90rpx;
+    line-height: 42rpx;
     font-weight: bold;
     margin-top: 40rpx;
+  }
+
+  .done {
+    background-color: #F0F0F0;
+
+    .smile {
+      width: 32rpx;
+      height: 32rpx;
+      margin-right: 16rpx;
+    }
   }
 
   .card {

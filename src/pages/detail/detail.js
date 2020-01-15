@@ -1,5 +1,6 @@
 Page({
   data: {
+    isDone: false,
     iPhoneX: false,
   },
   onLoad() {
@@ -10,6 +11,9 @@ Page({
     });
   },
   goEdit() {
-    wx.navigateTo({ url: '/pages/edit/edit' });
+    wx.navigateTo({ url: '/pages/edit/edit?edit=1' });
+  },
+  touchDaka() {
+    this.setData({ isDone: true });
   },
 });
