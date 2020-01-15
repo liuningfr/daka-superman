@@ -1,3 +1,5 @@
+import { showSuccess, showError } from '@/utils/toast';
+
 Page({
   data: {
     remind: false,
@@ -7,10 +9,12 @@ Page({
     uploadImg: '',
     selectedIcon: 'avatar',
     name: '',
+    isEdit: false,
   },
   onLoad(options) {
     if (options.edit) {
       wx.setNavigationBarTitle({ title: '编辑打卡' });
+      this.setData({ isEdit: true });
     } else {
       wx.setNavigationBarTitle({ title: '创建打卡' });
     }
@@ -58,11 +62,21 @@ Page({
     this.setData({ name: '' });
   },
   finishDaka() {
-    wx.showToast({
-      title: '创建成功',
-      duration: 2000,
-      mask: true,
-    });
+    const {
+      isEdit,
+      name,
+      remind,
+      timeText,
+    } = this.data;
+    if (name === '') {
+      showError('请填写打卡名称');
+      return;
+    }
+    if (remind && timeText === '') {
+      showError('请选择提醒时间');
+      return;
+    }
+    showSuccess(isEdit ? '编辑成功' : '创建成功');
   },
   deleteDaka() {
     wx.showModal({
@@ -71,11 +85,7 @@ Page({
       cancelColor: '#999999',
       success(res) {
         if (res.confirm) {
-          wx.showToast({
-            title: '删除成功',
-            duration: 2000,
-            mask: true,
-          });
+          showSuccess('删除成功');
         }
       },
     });

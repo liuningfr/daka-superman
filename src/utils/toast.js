@@ -13,16 +13,17 @@ const showBusy = text => wx.showToast({
 const showSuccess = text => wx.showToast({
   title: text,
   icon: 'success',
-});
-
-// 显示成功提示
-const showError = text => wx.showToast({
-  title: text,
-  icon: 'none',
-  duration: 1000,
+  duration: 2000,
 });
 
 // 显示失败提示
+const showError = text => wx.showToast({
+  title: text,
+  icon: 'none',
+  duration: 2000,
+});
+
+// 显示失败弹框
 const showModel = (title, content) => {
   wx.hideToast();
 
