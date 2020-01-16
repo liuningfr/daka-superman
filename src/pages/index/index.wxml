@@ -1,14 +1,26 @@
 <view class="container">
   <view class="title">你好，打卡超人</view>
-  <view class="item" bindtap="goDetail">
-    <image class="avatar" src="../../statics/zaoshui.png"/>
-    <view class="info">
-      <text>早睡超人</text>
-      <text>已打卡8次</text>
+  <block wx:if="{{list.length === 0}}">
+    <view class="empty-container">
+      <image class="empty-img" src="../../statics/empty.png" />
+      <view>您的星球空空如也哦</view>
+      <view class="empty-btn" bindtap="goEdit">
+        <image src="../../statics/btn_add.png"/>
+        <view>创建打卡</view>
+      </view>
     </view>
-    <view class="btn">去打卡</view>
-  </view>
-  <view class="add" bindtap="goEdit" style="{{iPhoneX ? 'bottom: 108rpx' : ''}}">
-    <image src="../../statics/btn_add.png" />
-  </view>
+  </block>
+  <block wx:else>
+    <view class="item" bindtap="goDetail">
+      <image class="avatar" src="../../statics/zaoshui.png"/>
+      <view class="info">
+        <text>早睡超人</text>
+        <text>已打卡8次</text>
+      </view>
+      <view class="btn">去打卡</view>
+    </view>
+    <view class="add" bindtap="goEdit" style="{{iPhoneX ? 'bottom: 108rpx' : ''}}">
+      <image src="../../statics/btn_add.png" />
+    </view>
+  </block>
 </view>
