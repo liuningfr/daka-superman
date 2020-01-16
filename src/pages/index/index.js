@@ -1,7 +1,7 @@
 Page({
   data: {
     iPhoneX: false,
-    list: [],
+    list: [1],
   },
   onLoad() {
     wx.getSystemInfo({

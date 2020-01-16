@@ -1,4 +1,4 @@
-import { showSuccess, showError } from '@/utils/toast';
+import { showSuccessSync, showError } from '@/utils/toast';
 
 Page({
   data: {
@@ -76,7 +76,7 @@ Page({
       showError('请选择提醒时间');
       return;
     }
-    showSuccess(isEdit ? '编辑成功' : '创建成功');
+    showSuccessSync(isEdit ? '编辑成功' : '创建成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
   },
   deleteDaka() {
     wx.showModal({
@@ -85,7 +85,7 @@ Page({
       cancelColor: '#999999',
       success(res) {
         if (res.confirm) {
-          showSuccess('删除成功');
+          showSuccessSync('删除成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
         }
       },
     });

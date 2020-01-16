@@ -16,6 +16,18 @@ const showSuccess = text => wx.showToast({
   duration: 2000,
 });
 
+// 显示成功提示, 延迟执行回调
+const showSuccessSync = (text, callback) => wx.showToast({
+  title: text,
+  icon: 'success',
+  duration: 2000,
+  success: () => {
+    setTimeout(() => {
+      callback();
+    }, 2000);
+  },
+});
+
 // 显示失败提示
 const showError = text => wx.showToast({
   title: text,
@@ -35,5 +47,10 @@ const showModel = (title, content) => {
 };
 
 export {
-  hideToast, showBusy, showSuccess, showError, showModel,
+  hideToast,
+  showBusy,
+  showSuccess,
+  showError,
+  showModel,
+  showSuccessSync,
 };
