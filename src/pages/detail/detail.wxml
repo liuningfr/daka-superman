@@ -29,5 +29,5 @@
   <view wx:else class="btn" bindtap="touchDaka">
     <view>轻触打卡</view>
   </view>
-  <image class="logo" src="../../statics/logo.png" style="{{iPhoneX ? 'bottom: 96rpx' : ''}}" />
+  <image class="logo" src="../../statics/logo.png" style="{{iPhone ? 'bottom: 96rpx' : ''}}" />
 </view>
