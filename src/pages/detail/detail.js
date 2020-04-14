@@ -6,7 +6,7 @@ Page({
   onLoad() {
     wx.getSystemInfo({
       success: (res) => {
-        this.setData({ iPhoneX: res.model.indexOf('iPhone X') > -1 });
+        this.setData({ iPhoneX: res.model.indexOf('iPhone') > -1 });
       },
     });
   },
