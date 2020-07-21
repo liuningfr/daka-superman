@@ -11,11 +11,11 @@
     </view>
   </block>
   <block wx:else>
-    <view class="item" bindtap="goDetail">
+    <view wx:for="{{list}}" wx:key="{{item.task_id}}"class="item" bindtap="goDetail">
       <image class="avatar" src="../../statics/zaoshui.png"/>
       <view class="info">
-        <text>早睡超人</text>
-        <text>已打卡8次</text>
+        <text>{{item.task_name}}</text>
+        <text>已打卡{{item.submit_times}}次</text>
       </view>
       <view class="btn">去打卡</view>
     </view>

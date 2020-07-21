@@ -1,6 +1,7 @@
-import { showError } from './toast';
 import login from '@/service/login';
 import config from '@/config';
+import { showError } from './toast';
+
 
 const defaultHeader = {
   Accept: 'application/json',
@@ -28,10 +29,10 @@ const request = (url, { type = 'GET', params = {} } = {}, callTimes = 1) => {
         Cookie: `WX_USS=${wx.getStorageSync('SESSION_USS')}`,
       },
       success(res) {
-        if (res.data.errno === 0) {
+        if (res.data.errNo === 0) {
           resolve(res.data.data);
         } else {
-          switch (res.data.errno) {
+          switch (res.data.errNo) {
             case 110003:
             case 330000:
               // 超过5次不再重新登录

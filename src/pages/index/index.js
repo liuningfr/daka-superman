@@ -1,14 +1,18 @@
+import request from '@/utils/request';
+
 Page({
   data: {
     iPhoneX: false,
-    list: [1],
+    list: [],
   },
-  onLoad() {
+  async onLoad() {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({ iPhoneX: res.model.indexOf('iPhone X') > -1 });
       },
     });
+    const res = await request('/api/xrm/task/list');
+    this.setData({ list: res });
   },
   onShareAppMessage() {
     return {
