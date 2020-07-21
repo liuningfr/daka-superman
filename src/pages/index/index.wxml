@@ -11,7 +11,7 @@
     </view>
   </block>
   <block wx:else>
-    <view wx:for="{{list}}" wx:key="{{item.task_id}}"class="item" bindtap="goDetail">
+    <view wx:for="{{list}}" wx:key="task_id"class="item" bindtap="goDetail">
       <image class="avatar" src="../../statics/zaoshui.png"/>
       <view class="info">
         <text>{{item.task_name}}</text>
