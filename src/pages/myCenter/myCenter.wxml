@@ -1,6 +1,6 @@
 <view class="container">
   <view class="top">
-    <view class="title">
+    <view class="title" bindtap="goLogin">
       <view class="name">点击成为超人</view>
       <image src="../../statics/avatar.png" />
     </view>

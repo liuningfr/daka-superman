@@ -20,14 +20,14 @@ const login = (callback) => {
       success(res) {
         if (res.code) {
           wx.request({
-            url: `${config.host}/account/user/login`,
-            method: 'POST',
+            url: `${config.host}/api/xrm/users/login`,
+            method: 'GET',
             header: {
               Accept: 'application/json',
               'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
             },
             data: {
-              app_id: wx.getExtConfigSync().app_id,
+              // app_id: wx.getExtConfigSync().app_id,
               code: res.code,
             },
             success(data) {
