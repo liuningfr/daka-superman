@@ -1,9 +1,14 @@
+import request from '@/utils/request';
+
 Page({
   data: {
     isDone: false,
     iPhone: false,
+    detail: {},
   },
-  onLoad() {
+  async onLoad({ task_id }) {
+    const data = await request('/api/xrm/task/detail', { params: { id: task_id } });
+    this.setData({ detail: data });
     wx.getSystemInfo({
       success: (res) => {
         this.setData({ iPhone: res.model.indexOf('iPhone') > -1 });

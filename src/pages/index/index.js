@@ -20,8 +20,9 @@ Page({
       path: '/pages/index/index',
     };
   },
-  goDetail() {
-    wx.navigateTo({ url: '/pages/detail/detail' });
+  goDetail(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({ url: `/pages/detail/detail?task_id=${id}` });
   },
   goEdit() {
     wx.navigateTo({ url: '/pages/edit/edit' });

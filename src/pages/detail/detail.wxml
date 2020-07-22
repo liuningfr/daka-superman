@@ -4,21 +4,21 @@
     <image class="edit" bindtap="goEdit" src="../../statics/edit.png" />
     <view class="info">
       <image class="avatar" src="../../statics/zaoshui.png" />
-      <view class="title">坚持每天早睡</view>
-      <view class="desc">您已坚持678天</view>
+      <view class="title">{{detail.task_name}}</view>
+      <view class="desc">您已坚持{{detail.last_submit_date}}天</view>
     </view>
     <view class="record">
       <view class="item">
         <text>累计打卡</text>
-        <text>32</text>
+        <text>{{detail.submit_times}}</text>
       </view>
       <view class="item">
         <text>当前连续</text>
-        <text>6</text>
+        <text>{{detail.last_submit_times}}</text>
       </view>
       <view class="item">
         <text>最高连续</text>
-        <text>12</text>
+        <text>{{detail.highest_last_submit_times}}</text>
       </view>
     </view>
   </view>
