@@ -5,7 +5,7 @@
     <view class="info">
       <image class="avatar" src="../../statics/zaoshui.png" />
       <view class="title">{{detail.task_name}}</view>
-      <view class="desc">您已坚持{{detail.last_submit_date}}天</view>
+      <view class="desc">您已坚持{{detail.last_submit_times}}天</view>
     </view>
     <view class="record">
       <view class="item">
@@ -26,7 +26,7 @@
     <image class="smile" src="../../statics/smile.png" />
     <view>恭喜你，完成打卡</view>
   </view>
-  <view wx:else class="btn" bindtap="touchDaka">
+  <view wx:else class="btn" bindtap="touchDaka" data-id="{{detail.id}}">
     <view>轻触打卡</view>
   </view>
   <image class="logo" src="../../statics/logo.png" style="{{iPhone ? 'bottom: 96rpx' : ''}}" />
