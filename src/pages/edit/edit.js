@@ -13,13 +13,20 @@ Page({
     isEdit: false,
     taskId: null,
   },
-  onLoad(options) {
+  async onLoad(options) {
     if (options.id) {
       wx.setNavigationBarTitle({ title: '编辑打卡' });
       this.setData({
         isEdit: true,
         taskId: options.id,
       });
+      const data = await request('/api/xrm/task/detail', { params: { task_id: options.id } });
+      if (data) {
+        this.setData({
+          name: data.task_name,
+          selectedIcon: data.task_pic.toString(),
+        });
+      }
     } else {
       wx.setNavigationBarTitle({ title: '创建打卡' });
     }
@@ -73,6 +80,7 @@ Page({
       remind,
       timeText,
       selectedIcon,
+      taskId,
     } = this.data;
     if (name === '') {
       showError('请填写打卡名称');
@@ -82,13 +90,25 @@ Page({
       showError('请选择提醒时间');
       return;
     }
-    const result = await request('/api/xrm/task/add', {
-      type: 'POST',
-      params: {
-        task_name: name,
-        task_pic: Number(selectedIcon),
-      },
-    });
+    let result;
+    if (isEdit) {
+      result = await request('/api/xrm/task/update', {
+        type: 'POST',
+        params: {
+          task_id: taskId,
+          task_name: name,
+          task_pic: Number(selectedIcon),
+        },
+      });
+    } else {
+      result = await request('/api/xrm/task/add', {
+        type: 'POST',
+        params: {
+          task_name: name,
+          task_pic: Number(selectedIcon),
+        },
+      });
+    }
     if (result) {
       showSuccessSync(isEdit ? '编辑成功' : '创建成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
     }
