@@ -31,10 +31,10 @@ const login = (callback) => {
               code: res.code,
             },
             success(data) {
-              if (data.data.errno === 0) {
+              if (data.data.errNo === 0) {
                 wx.setStorage({
                   key: 'SESSION_USS',
-                  data: data.data.data.session_uss,
+                  data: data.data.data.WX_USS,
                   success() {
                     isLogin = true;
                     if (callback) callback();

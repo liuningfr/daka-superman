@@ -6,8 +6,7 @@ Page({
     data: {},
   },
   async onLoad() {
-    const res = await request('/api/xrm/users/getUserInfo');
-    this.setData({ data: res });
+    await this.getUserInfo();
   },
   onShareAppMessage() {
     return {
@@ -17,5 +16,10 @@ Page({
   },
   async goLogin() {
     await login();
+    await this.getUserInfo();
+  },
+  async getUserInfo() {
+    const res = await request('/api/xrm/users/getUserInfo');
+    this.setData({ data: res });
   },
 });
