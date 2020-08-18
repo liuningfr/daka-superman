@@ -1,4 +1,5 @@
 import { showSuccessSync, showError } from '@/utils/toast';
+import request from '@/utils/request';
 
 Page({
   data: {
@@ -7,7 +8,7 @@ Page({
     timeText: '',
     time: [0, 0],
     uploadImg: '',
-    selectedIcon: 'avatar',
+    selectedIcon: '1',
     name: '',
     isEdit: false,
   },
@@ -25,13 +26,13 @@ Page({
     });
   },
   chooseImg() {
-    wx.chooseImage({
-      count: 1,
-      sourceType: ['album', 'camera'],
-      success: (res) => {
-        this.setData({ uploadImg: res.tempFilePaths, selectedIcon: '' });
-      },
-    });
+    // wx.chooseImage({
+    //   count: 1,
+    //   sourceType: ['album', 'camera'],
+    //   success: (res) => {
+    //     this.setData({ uploadImg: res.tempFilePaths, selectedIcon: '' });
+    //   },
+    // });
   },
   toggleRemind() {
     const { remind } = this.data;
@@ -53,7 +54,7 @@ Page({
     this.setData({ selectedIcon: index, uploadImg: '' });
   },
   delImg() {
-    this.setData({ selectedIcon: 'avatar', uploadImg: '' });
+    this.setData({ selectedIcon: '1', uploadImg: '' });
   },
   changeName(e) {
     this.setData({ name: e.detail.value });
@@ -61,12 +62,13 @@ Page({
   clearName() {
     this.setData({ name: '' });
   },
-  finishDaka() {
+  async finishDaka() {
     const {
       isEdit,
       name,
       remind,
       timeText,
+      selectedIcon,
     } = this.data;
     if (name === '') {
       showError('请填写打卡名称');
@@ -76,7 +78,16 @@ Page({
       showError('请选择提醒时间');
       return;
     }
-    showSuccessSync(isEdit ? '编辑成功' : '创建成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
+    const result = await request('/api/xrm/task/add', {
+      type: 'POST',
+      params: {
+        task_name: name,
+        task_pic: Number(selectedIcon),
+      },
+    });
+    if (result) {
+      showSuccessSync(isEdit ? '编辑成功' : '创建成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
+    }
   },
   deleteDaka() {
     wx.showModal({

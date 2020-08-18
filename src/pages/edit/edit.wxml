@@ -11,20 +11,20 @@
       <view wx:else class="add" bindtap="chooseImg">
         <image class="icon_add" src="../../statics/icon_add.png" />
       </view>
-      <view class="icon" bindtap="chooseIcon" data-index="avatar">
-        <image class="bg {{selectedIcon === 'avatar' ? 'selected' : ''}}" src="../../statics/avatar.png" />
+      <view class="icon" bindtap="chooseIcon" data-index="1">
+        <image class="bg {{selectedIcon === '1' ? 'selected' : ''}}" src="../../statics/avatar.png" />
         <image class="ok" src="../../statics/choose_ok.png" wx:if="{{selectedIcon === 'avatar'}}" />
       </view>
-      <view class="icon" bindtap="chooseIcon" data-index="zaoshui">
-        <image class="bg {{selectedIcon === 'zaoshui' ? 'selected' : ''}}" src="../../statics/zaoshui.png" />
+      <view class="icon" bindtap="chooseIcon" data-index="2">
+        <image class="bg {{selectedIcon === '2' ? 'selected' : ''}}" src="../../statics/zaoshui.png" />
         <image class="ok" src="../../statics/choose_ok.png" wx:if="{{selectedIcon === 'zaoshui'}}" />
       </view>
-      <view class="icon" bindtap="chooseIcon" data-index="sports">
-        <image class="bg {{selectedIcon === 'sports' ? 'selected' : ''}}" src="../../statics/sports.png" />
+      <view class="icon" bindtap="chooseIcon" data-index="3">
+        <image class="bg {{selectedIcon === '3' ? 'selected' : ''}}" src="../../statics/sports.png" />
         <image class="ok" src="../../statics/choose_ok.png" wx:if="{{selectedIcon === 'sports'}}" />
       </view>
-      <view class="icon" bindtap="chooseIcon" data-index="english">
-        <image class="bg {{selectedIcon === 'english' ? 'selected' : ''}}" src="../../statics/english.png" />
+      <view class="icon" bindtap="chooseIcon" data-index="4">
+        <image class="bg {{selectedIcon === '4' ? 'selected' : ''}}" src="../../statics/english.png" />
         <image class="ok" src="../../statics/choose_ok.png" wx:if="{{selectedIcon === 'english'}}" />
       </view>
     </view>

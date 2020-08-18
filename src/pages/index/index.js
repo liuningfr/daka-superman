@@ -11,6 +11,12 @@ Page({
         this.setData({ iPhoneX: res.model.indexOf('iPhone X') > -1 });
       },
     });
+    await this.getList();
+  },
+  async onShow() {
+    await this.getList();
+  },
+  async getList() {
     const res = await request('/api/xrm/task/list');
     this.setData({ list: res });
   },
