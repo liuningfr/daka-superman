@@ -22,6 +22,10 @@ Page({
   async onShow() {
     await this.getList();
   },
+  async onPullDownRefresh() {
+    await this.getList();
+    wx.stopPullDownRefresh();
+  },
   async getList() {
     const res = await request('/api/xrm/task/list');
     this.setData({ list: res });
