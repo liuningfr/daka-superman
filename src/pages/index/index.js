@@ -4,6 +4,12 @@ Page({
   data: {
     iPhoneX: false,
     list: [],
+    iconList: [
+      '../../statics/avatar.png',
+      '../../statics/zaoshui.png',
+      '../../statics/sports.png',
+      '../../statics/english.png',
+    ],
   },
   async onLoad() {
     wx.getSystemInfo({

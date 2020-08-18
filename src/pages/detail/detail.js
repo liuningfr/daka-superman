@@ -41,7 +41,7 @@ Page({
 
     const result = await request('/api/xrm/task/submit', { type: 'POST', params: { task_id: id } });
     if (result) {
-      const data = await request('/api/xrm/task/detail', { params: { id: taskId } });
+      const data = await request('/api/xrm/task/detail', { params: { task_id: taskId } });
       this.setData({ isDone: true, detail: data });
     }
   },
