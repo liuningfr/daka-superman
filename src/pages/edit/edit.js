@@ -11,11 +11,15 @@ Page({
     selectedIcon: '1',
     name: '',
     isEdit: false,
+    taskId: null,
   },
   onLoad(options) {
-    if (options.edit) {
+    if (options.id) {
       wx.setNavigationBarTitle({ title: '编辑打卡' });
-      this.setData({ isEdit: true });
+      this.setData({
+        isEdit: true,
+        taskId: options.id,
+      });
     } else {
       wx.setNavigationBarTitle({ title: '创建打卡' });
     }
@@ -90,13 +94,22 @@ Page({
     }
   },
   deleteDaka() {
+    const { taskId } = this.data;
     wx.showModal({
       title: '确认删除该打卡么?',
       confirmColor: '#FA5151',
       cancelColor: '#999999',
-      success(res) {
+      async success(res) {
         if (res.confirm) {
-          showSuccessSync('删除成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
+          const result = await request('/api/xrm/task/drop', {
+            type: 'POST',
+            params: {
+              task_id: taskId,
+            },
+          });
+          if (result) {
+            showSuccessSync('删除成功', () => { wx.switchTab({ url: '/pages/index/index' }); });
+          }
         }
       },
     });

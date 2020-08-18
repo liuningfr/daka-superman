@@ -33,7 +33,12 @@ Page({
     };
   },
   goEdit() {
-    wx.navigateTo({ url: '/pages/edit/edit?edit=1' });
+    let path = '/pages/edit/edit';
+    const { taskId } = this.data;
+    if (taskId) {
+      path = `/pages/edit/edit?id=${taskId}`;
+    }
+    wx.navigateTo({ url: path });
   },
   async touchDaka(e) {
     const { id } = e.currentTarget.dataset;
