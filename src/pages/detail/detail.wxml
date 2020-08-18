@@ -26,7 +26,7 @@
     <image class="smile" src="../../statics/smile.png" />
     <view>恭喜你，完成打卡</view>
   </view>
-  <view wx:else class="btn" bindtap="touchDaka" data-id="{{detail.id}}">
+  <view wx:else class="btn" bindtap="touchDaka" data-id="{{detail.task_id}}">
     <view>轻触打卡</view>
   </view>
   <image class="logo" src="../../statics/logo.png" style="{{iPhone ? 'bottom: 96rpx' : ''}}" />

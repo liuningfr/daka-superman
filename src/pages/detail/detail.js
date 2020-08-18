@@ -9,7 +9,7 @@ Page({
     taskId: null,
   },
   async onLoad({ task_id }) {
-    const data = await request('/api/xrm/task/detail', { params: { id: task_id } });
+    const data = await request('/api/xrm/task/detail', { params: { task_id } });
     // 判断今日是否已打卡
     if (data && data.last_submit_date) {
       const timestamp = Number(new Date()).toString().slice(0, 10);
@@ -39,7 +39,7 @@ Page({
     const { id } = e.currentTarget.dataset;
     const { taskId } = this.data;
 
-    const result = await request('/api/xrm/task/submit', { type: 'POST', params: { id } });
+    const result = await request('/api/xrm/task/submit', { type: 'POST', params: { task_id: id } });
     if (result) {
       const data = await request('/api/xrm/task/detail', { params: { id: taskId } });
       this.setData({ isDone: true, detail: data });
